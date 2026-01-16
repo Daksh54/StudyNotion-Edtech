@@ -5,6 +5,8 @@ import frameImg from "../../../assets/Images/frame.png"
 import LoginForm from "./LoginForm"
 import SignupForm from "./SignupForm"
 
+import { motion } from "framer-motion"
+
 function Template({ title, description1, description2, image, formType }) {
   const { loading } = useSelector((state) => state.auth)
 
@@ -14,7 +16,12 @@ function Template({ title, description1, description2, image, formType }) {
         <div className="spinner"></div>
       ) : (
         <div className="mx-auto flex w-11/12 max-w-maxContent flex-col-reverse justify-between gap-y-12 py-12 md:flex-row md:gap-y-0 md:gap-x-12">
-          <div className="mx-auto w-11/12 max-w-[450px] md:mx-0">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto w-11/12 max-w-[450px] md:mx-0"
+          >
             <h1 className="text-[1.875rem] font-semibold leading-[2.375rem] text-richblack-5">
               {title}
             </h1>
@@ -25,8 +32,13 @@ function Template({ title, description1, description2, image, formType }) {
               </span>
             </p>
             {formType === "signup" ? <SignupForm /> : <LoginForm />}
-          </div>
-          <div className="relative mx-auto w-11/12 max-w-[450px] md:mx-0">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative mx-auto w-11/12 max-w-[450px] md:mx-0"
+          >
             <img
               src={frameImg}
               alt="Pattern"
@@ -42,7 +54,7 @@ function Template({ title, description1, description2, image, formType }) {
               loading="lazy"
               className="absolute -top-4 right-4 z-10"
             />
-          </div>
+          </motion.div>
         </div>
       )}
     </div>

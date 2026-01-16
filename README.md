@@ -1,192 +1,110 @@
-# 🎓 StudyNotion — MERN Stack Ed-Tech Platform
+# StudyNotion - EdTech Platform 🚀
 
-**StudyNotion** is a fully functional **Ed-Tech Platform** designed to enable users to **create, consume, and rate educational content**.  
-Built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)**, it provides a seamless and interactive learning experience for students while allowing instructors to showcase and monetize their expertise.
+StudyNotion is a fully functional EdTech platform that enables users to create, consume, and rate educational content. The platform is built using the **MERN stack** (MongoDB, ExpressJS, ReactJS, NodeJS) and has been modernized with **Vite** and a **Premium UI/UX** design.
 
----
+![Home Page](readme-assets/homepage.png)
 
-## 🧠 Overview
+## 🌟 Key Features
 
-StudyNotion bridges the gap between learners and instructors by offering:
-- A **responsive, intuitive interface** for students to explore and enroll in courses.
-- A **powerful content management system** for instructors to upload and manage learning materials.
-- A **secure backend** for authentication, payments, and analytics.
+-   **Student & Instructor Modes**: Seamless switching between learning and teaching roles.
+-   **Course Management**: Instructors can create, edit, and publish courses with multimedia content.
+-   **Payment Integration**: Secure course purchase flow using Razorpay.
+-   **Rating & Reviews**: Real-time feedback system for courses.
+-   **Premium UI/UX**:
+    -   **Glassmorphism Navbar**: Modern, translucent navigation.
+    -   **Dark Mode Aesthetic**: Sleek "Rich Black" and "Neon" color palette.
+    -   **Animations**: Smooth page transitions and scroll reveals powered by **Framer Motion**.
+-   **Performance**: Migrated to **Vite** for lightning-fast development and build times.
 
----
+## 📸 Snapshots
 
-## 🏗️ System Architecture
+### Course Details Page
+![Course Details](readme-assets/course-details.png)
 
-The platform follows a **client–server architecture** with three main components:
+## 🛠️ Tech Stack
 
-### **Frontend**
-- Built using **ReactJS** for dynamic, component-based UI.
-- Uses **Redux** for global state management.
-- Styled with **Tailwind CSS** for responsive design.
-- Communicates with backend via **RESTful APIs**.
-
-### **Backend**
-- Developed using **Node.js** and **Express.js**.
-- Implements **monolithic architecture** for better control and performance.
-- Handles business logic, authentication, and media management.
-- Integrates **Razorpay** for secure payment processing.
-
-### **Database**
-- Powered by **MongoDB (NoSQL)** for flexible and scalable data storage.
-- Managed using **Mongoose** ODM.
-- Stores users, courses, ratings, and media metadata.
-
----
-
-## 🧩 Features
-
-### 👩‍🎓 For Students
-- Browse, purchase, and enroll in courses.  
-- Access video content and materials.  
-- Maintain a personalized **wishlist** and **cart**.  
-- Rate and review completed courses.  
-- Manage account details and learning progress.  
-
-### 👨‍🏫 For Instructors
-- Create, update, or delete courses.  
-- Upload content with **Cloudinary integration** (videos, images, docs).  
-- Track course analytics and engagement insights.  
-- Manage pricing and feedback.  
-
-### 🧑‍💼 For Admin (Future Scope)
-- Oversee platform metrics and financials.  
-- Manage instructors, students, and content.  
-- Generate revenue and engagement reports.  
-
----
-
-## 🔧 Backend Features
-
-- **Authentication & Authorization** — via JWT & bcrypt.  
-- **OTP verification** and **password recovery** for added security.  
-- **Course CRUD operations** for instructors.  
-- **Payment integration** using Razorpay.  
-- **Cloud-based media storage** with Cloudinary.  
-- **Markdown support** for course content formatting.  
-- **RESTful API** endpoints for scalable frontend communication.
-
----
-
-## 🧱 API Design
-
-StudyNotion follows RESTful architecture with clean and consistent routes.
-
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| `POST` | `/api/auth/signup` | Create a new student/instructor account |
-| `POST` | `/api/auth/login` | Log in with credentials |
-| `POST` | `/api/auth/verify-otp` | Verify email with OTP |
-| `POST` | `/api/auth/forgot-password` | Send password reset link |
-| `GET` | `/api/courses` | Retrieve all courses |
-| `GET` | `/api/courses/:id` | Fetch specific course details |
-| `POST` | `/api/courses` | Create a new course |
-| `PUT` | `/api/courses/:id` | Update existing course |
-| `DELETE` | `/api/courses/:id` | Delete a course |
-| `POST` | `/api/courses/:id/rate` | Add a rating to a course |
-
----
-
-## 🗃️ Database Models
-
-### **Student Schema**
-- name  
-- email  
-- password (hashed)  
-- enrolledCourses  
-
-### **Instructor Schema**
-- name  
-- email  
-- password  
-- coursesCreated  
-
-### **Course Schema**
-- title  
-- description  
-- instructor  
-- media (Cloudinary links)  
-- rating  
-- price  
-
----
-
-## ☁️ Deployment
-
-| Component | Service Used |
-|------------|--------------|
-| **Frontend** | Vercel |
-| **Backend** | Render / Railway |
-| **Database** | MongoDB Atlas |
-| **Media Storage** | Cloudinary |
-
-This setup ensures global accessibility, auto-scaling, and security across all services.
-
----
-
-## 🧪 Testing
-
-- **Unit Testing:** Jest  
-- **Integration Testing:** Postman  
-- **Frontend Testing:** Manual & Cypress-based component validation  
-
----
-
-## 🚀 Future Enhancements
-
-| Feature | Description | Priority |
-|----------|--------------|----------|
-| **Gamification** | Add badges, points & leaderboards | Medium |
-| **Personalized Learning Paths** | Adaptive course recommendations | High |
-| **Social Learning** | Peer discussion & collaboration features | Medium |
-| **Mobile App** | Android/iOS app for on-the-go learning | High |
-| **AI Course Recommendation** | ML-driven suggestions for users | High |
-| **AR/VR Integration** | Immersive course experiences | Medium |
-
----
-
-## 💻 Tech Stack
-
-| Layer | Technologies |
-|-------|---------------|
-| **Frontend** | React, Redux, Tailwind CSS |
-| **Backend** | Node.js, Express.js |
-| **Database** | MongoDB, Mongoose |
+| Category | Technologies |
+| :--- | :--- |
+| **Frontend** | ReactJS, Vite, Tailwind CSS, Framer Motion, Redux Toolkit |
+| **Backend** | NodeJS, ExpressJS, Mongoose |
+| **Database** | MongoDB |
+| **Authentication** | JWT, OTP (Nodemailer) |
 | **Payments** | Razorpay |
-| **Media** | Cloudinary |
-| **Hosting** | Vercel, Render, MongoDB Atlas |
-| **Testing** | Jest, Postman |
+| **Cloud Storage** | Cloudinary |
 
----
+## ⚡ Getting Started
 
-## 🧠 Learning Focus (Personal)
+Follow these instructions to set up the project locally.
 
-Currently enhancing my expertise in:
-- **AI & ML integration** within full-stack systems  
-- **Cloud Deployment** with AWS / GCP  
-- **DevOps workflows** using Docker & Kubernetes  
+### Prerequisites
 
----
+-   Node.js (v18+)
+-   MongoDB (Local or Atlas)
 
-## 👨‍💻 Author
+### Installation
 
-**Daksh Sharma**  
-Full Stack Web Developer | MERN | FastAPI | AI & Cloud Enthusiast  
-📧 [dakshsharma5454871@gmail.com](mailto:dakshsharma5454871@gmail.com)  
-🔗 [GitHub](https://github.com/Daksh54) | [LinkedIn](https://www.linkedin.com/in/daksh-sharma)
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/Daksh54/StudyNotion-Edtech.git
+    cd StudyNotion-Edtech
+    ```
 
----
+2.  **Install Frontend Dependencies**
+    ```bash
+    npm install
+    ```
 
-## 🪪 License
+3.  **Install Backend Dependencies**
+    ```bash
+    cd server
+    npm install
+    ```
 
-This project is licensed under the **MIT License**.  
-See the [LICENSE](./LICENSE) file for more details.
+### Environment Variables
 
----
+Create a `.env` file in the `server/` directory:
 
-### 🌟 “Study smart. Build smarter.”  
-*An interactive and scalable learning platform powered by MERN.*
+```env
+# Server
+PORT=4000
+MONGODB_URL=mongodb://localhost:27017/studynotion
 
+# Auth
+JWT_SECRET=your_jwt_secret
+MAIL_HOST=smtp.gmail.com
+MAIL_USER=your_email
+MAIL_PASS=your_email_password
+
+# Payments (Razorpay)
+RAZORPAY_KEY=your_key
+RAZORPAY_SECRET=your_secret
+
+# Cloudinary
+CLOUD_NAME=your_cloud_name
+API_KEY=your_api_key
+API_SECRET=your_api_secret
+```
+
+### Running the App
+
+**Option 1: Concurrent (Recommended)**
+Run both frontend and backend with a single command from the root:
+```bash
+npm start
+```
+
+**Option 2: Separate Terminals**
+*Frontend:*
+```bash
+npm run dev
+```
+
+*Backend:*
+```bash
+cd server
+node index.js
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements.
